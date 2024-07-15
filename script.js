@@ -36,31 +36,48 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Education:</span></p>
                     <ul>
-                        <li><span class="three">2023-Present</span></li>
-                        <li><span class="three">B.Tech in Computer Science and Engineering</span></li>
-                        <li><span class="three">CGPA: 8.52</span></li>
-                        <li><span class="three">Lovely Professional University, Phagwara, Punjab</span></li>
-                        <br>
-                        <li><span class="three">2021-2019</span></li>
-                        <li><span class="three">Senior Secondary Certificate</span></li>
-                        <li><span class="three">CGPA: 8.32</span></li>
-                        <li><span class="three">Delhi International School, Dwarka, Delhi</span></li>
-                        <br>
-                        <li><span class="three">2019-2021</span></li>
-                        <li><span class="three">Secondary Certificate</span></li>
-                        <li><span class="three">CGPA: 9.62</span></li>
-                        <li><span class="three">Delhi International School, Dwarka, Delhi</span></li>
+                        <li><span class="three">2023-Present: B.Tech in Computer Science and Engineering, Lovely Professional University, Phagwara, Punjab</span></li>
+                        <li><span class="three">2019-2021: Senior Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
+                        <li><span class="three">2017-2019: Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
                     </ul>
                 `;
                 break;
             case 'experience':
-                commandOutput = '<p class="command-output">experience command executed: Showing work experience...</p>';
+                commandOutput = `
+                    <p><span class="command-output">Experience:</span></p>
+                    <ul>
+                        <li><span class="three">Strategy and Operations Intern</span></li>
+                        <li><span class="three">Chamberly AB (Based in Sweden)</span></li>
+                        <li><span class="three">Started in July 2024</span></li>
+                    </ul>
+                `;
                 break;
             case 'skills':
-                commandOutput = '<p class="command-output">skills command executed: Listing skills...</p>';
+                commandOutput = `
+                    <p><span class="command-output">Skills:</span></p>
+                    <ul>
+                        <li><span class="three">HTML, CSS, JavaScript</span></li>
+                        <li><span class="three">C, C++, Python</span></li>
+                        <li><span class="three">MySQL</span></li>
+                        <li><span class="three">Machine Learning</span></li>
+                        <li><span class="three">Data Analysis and Visualization</span></li>
+                        <li><span class="three">Restful APIs</span></li>
+                        <li><span class="three">Langchain</span></li>
+                        <li><span class="three">Generative AI</span></li>
+                    </ul>
+                `;
                 break;
             case 'projects':
-                commandOutput = '<p class="command-output">projects command executed: Showing projects...</p>';
+                commandOutput = `
+                    <p><span class="command-output">Projects:</span></p>
+                    <ul>
+                        <li><span class="three">Medical Assistance System using Langchain, OpenAI API, and Tkinter</span></li>
+                        <li><span class="three">LMS using Python and SQL</span></li>
+                        <li><span class="three">To-do App using Python and Tkinter</span></li>
+                        <li><span class="three">Sustainable Land Website using HTML, CSS, and JavaScript</span></li>
+                    </ul>
+                    <p>For more projects, check my GitHub: <a href="https://github.com/yashvisharma1204" target="_blank">https://github.com/yashvisharma1204</a></p>
+                `;
                 break;
             case 'GUI':
                 commandOutput = '<p class="command-output">Redirecting to GUI Website...</p>';
@@ -69,7 +86,13 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 }, 2000); // 2 seconds delay before redirecting
                 break;
             case 'contact':
-                commandOutput = '<p class="command-output">contact command executed: Showing contact information...</p>';
+                commandOutput = `
+                    <p><span class="command-output">Contact Information:</span></p>
+                    <ul>
+                        <li><span class="three">Email: yashvisharma503@gmail.com</span></li>
+                        <li><span class="three">LinkedIn: <a href="https://www.linkedin.com/in/yashvi-sharma-150863220/" target="_blank">https://www.linkedin.com/in/yashvi-sharma-150863220/</a></span></li>
+                    </ul>
+                `;
                 break;
             default:
                 commandOutput = `<p class="command-output">>command not found: ${input}</p>`;
