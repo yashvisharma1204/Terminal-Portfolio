@@ -33,7 +33,25 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 `;
                 break;
             case 'education':
-                commandOutput = '<p class="command-output">education command executed: Showing education background...</p>';
+                commandOutput = `
+                    <p><span class="command-output">Education:</span></p>
+                    <ul>
+                        <li><span class="three">2023-Present</span></li>
+                        <li><span class="three">B.Tech in Computer Science and Engineering</span></li>
+                        <li><span class="three">CGPA: 8.52</span></li>
+                        <li><span class="three">Lovely Professional University, Phagwara, Punjab</span></li>
+                        <br>
+                        <li><span class="three">2021-2019</span></li>
+                        <li><span class="three">Senior Secondary Certificate</span></li>
+                        <li><span class="three">CGPA: 8.32</span></li>
+                        <li><span class="three">Delhi International School, Dwarka, Delhi</span></li>
+                        <br>
+                        <li><span class="three">2019-2021</span></li>
+                        <li><span class="three">Secondary Certificate</span></li>
+                        <li><span class="three">CGPA: 9.62</span></li>
+                        <li><span class="three">Delhi International School, Dwarka, Delhi</span></li>
+                    </ul>
+                `;
                 break;
             case 'experience':
                 commandOutput = '<p class="command-output">experience command executed: Showing work experience...</p>';
