@@ -1,0 +1,107 @@
+body {
+    background-color: black;
+    color: #3B7DC4; /* Blue for text */
+    font-size: 1.3em; /* Increase font size */
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: monospace;
+    overflow-y:scroll;
+}
+
+.container {
+    border: 2px solid #3B7DC4; /* Blue border */
+    padding: 20px;
+    text-align: left; /* Align contents to the left */
+}
+
+.terminal {
+    margin: 0 auto; /* Center the terminal box horizontally */
+    max-width: 800px; /* Adjust maximum width as needed */
+}
+
+.ascii-art {
+    font-family: monospace;
+    font-size: 1.2em; /* Increase ASCII art font size */
+    margin-bottom: 20px;
+}
+
+.prompt {
+    color: #3DBD94; /* Turquoise for prompt */
+    font-size: 1.1em; /* Increase prompt font size */
+}
+
+.command-output {
+    color: #8CC63F; /* Green for command output */
+    font-size: 1.1em; /* Increase command output font size */
+}
+
+.wec {
+    color: #EC008C; /* Yellow for ASCII art */
+}
+
+.but {
+    color: #FBCB09; /* Yellow for ASCII art */
+}
+
+.help-menu {
+    color: #F7941D; /* Orange for help menu */
+}
+
+a {
+    color: #8CC63F; /* Pink for links */
+}
+
+a:hover {
+    color: #92278F; /* Purple for hovered links */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li .one {
+    color: #F7941D; /* Orange for list items */
+    margin-left: 35px;
+    padding: 5px;
+}
+
+li .two {
+    color: #cacaca; /* Orange for list items */
+    padding: 5px;
+}
+li .three{
+    color: #cacaca;
+    padding-left: 35px ;
+}
+
+@media (max-width: 500px) {
+    .terminal {
+        max-width: 95%; /* Adjust terminal width for smaller screens */
+    }
+
+    .ascii-art {
+        font-size: 1.3em; /* Decrease ASCII art size for smaller screens */
+    }
+
+    .output {
+        max-height: 150px; /* Reduce max-height for output */
+    }
+}
+
+input {
+    background: none;
+    border: none;
+    color: #3DBD94; /* Turquoise for input */
+    outline: none;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+
+p {
+    margin-left: 20px;
+    font-size: 18px;
+}
