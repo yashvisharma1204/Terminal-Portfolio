@@ -15,6 +15,8 @@ body {
     border: 2px solid #3B7DC4; /* Blue border */
     padding: 20px;
     text-align: left; /* Align contents to the left */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .terminal {
