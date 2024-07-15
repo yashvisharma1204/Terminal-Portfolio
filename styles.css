@@ -8,7 +8,7 @@ body {
     align-items: center; /* Center vertically */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: monospace;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 .container {
@@ -73,23 +73,10 @@ li .two {
     color: #cacaca; /* Orange for list items */
     padding: 5px;
 }
-li .three{
+
+li .three {
     color: #cacaca;
-    padding-left: 35px ;
-}
-
-@media (max-width: 500px) {
-    .terminal {
-        max-width: 95%; /* Adjust terminal width for smaller screens */
-    }
-
-    .ascii-art {
-        font-size: 1.3em; /* Decrease ASCII art size for smaller screens */
-    }
-
-    .output {
-        max-height: 150px; /* Reduce max-height for output */
-    }
+    padding-left: 35px;
 }
 
 input {
@@ -104,4 +91,46 @@ input {
 p {
     margin-left: 20px;
     font-size: 18px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 500px) {
+    body {
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .container {
+        padding: 10px; /* Reduce padding */
+        border-width: 1px; /* Adjust border width */
+    }
+
+    .terminal {
+        max-width: 95%; /* Adjust terminal width for smaller screens */
+        margin: 10px auto; /* Add margin for spacing */
+    }
+
+    .ascii-art {
+        font-size: 1em; /* Decrease ASCII art size for smaller screens */
+    }
+
+    .prompt,
+    .command-output {
+        font-size: 1em; /* Adjust font size for prompt and output */
+    }
+
+    li .one,
+    li .two,
+    li .three {
+        margin-left: 20px; /* Adjust margin for list items */
+        padding: 3px; /* Adjust padding for list items */
+    }
+
+    input {
+        font-size: 1em; /* Adjust input font size */
+    }
+
+    p {
+        margin-left: 10px; /* Adjust paragraph margin */
+        font-size: 16px; /* Adjust paragraph font size */
+    }
 }
