@@ -36,7 +36,7 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Education:</span></p>
                     <ul>
-                        <li><span class="three">2023-Present: B.Tech in Computer Science and Engineering, Lovely Professional University, Phagwara, Punjab</span></li>
+                        <li><span class="three">2023-Present: B.Tech in CSE, Lovely Professional University, Phagwara, Punjab</span></li>
                         <li><span class="three">2019-2021: Senior Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
                         <li><span class="three">2017-2019: Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
                     </ul>
@@ -46,9 +46,7 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Experience:</span></p>
                     <ul>
-                        <li><span class="three">Strategy and Operations Intern</span></li>
-                        <li><span class="three">Chamberly AB (Based in Sweden)</span></li>
-                        <li><span class="three">Started in July 2024</span></li>
+                        <li><span class="three">> Strategy and Operations Intern</span> <b>Chamberly AB</b>, Started in July 2024</li>
                     </ul>
                 `;
                 break;
@@ -56,14 +54,14 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Skills:</span></p>
                     <ul>
-                        <li><span class="three">HTML, CSS, JavaScript</span></li>
-                        <li><span class="three">C, C++, Python</span></li>
-                        <li><span class="three">MySQL</span></li>
-                        <li><span class="three">Machine Learning</span></li>
-                        <li><span class="three">Data Analysis and Visualization</span></li>
-                        <li><span class="three">Restful APIs</span></li>
-                        <li><span class="three">Langchain</span></li>
-                        <li><span class="three">Generative AI</span></li>
+                        <li><span class="three">> HTML, CSS, JavaScript</span></li>
+                        <li><span class="three">> C, C++, Python</span></li>
+                        <li><span class="three">> MySQL</span></li>
+                        <li><span class="three">> Machine Learning</span></li>
+                        <li><span class="three">> Data Analysis and Visualization</span></li>
+                        <li><span class="three">> Restful APIs</span></li>
+                        <li><span class="three">> Langchain</span></li>
+                        <li><span class="three">> Generative AI</span></li>
                     </ul>
                 `;
                 break;
@@ -71,10 +69,10 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Projects:</span></p>
                     <ul>
-                        <li><span class="three">Medical Assistance System using Langchain, OpenAI API, and Tkinter</span></li>
-                        <li><span class="three">LMS using Python and SQL</span></li>
-                        <li><span class="three">To-do App using Python and Tkinter</span></li>
-                        <li><span class="three">Sustainable Land Website using HTML, CSS, and JavaScript</span></li>
+                        <li><span class="three">> Medical Assistance System using Langchain, OpenAI API, and Tkinter</span></li>
+                        <li><span class="three">> LMS using Python and SQL</span></li>
+                        <li><span class="three">> To-do App using Python and Tkinter</span></li>
+                        <li><span class="three">> Sustainable Land Website using HTML, CSS, and JavaScript</span></li>
                     </ul>
                     <p>For more projects, check my GitHub: <a href="https://github.com/yashvisharma1204" target="_blank">https://github.com/yashvisharma1204</a></p>
                 `;
