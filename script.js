@@ -18,6 +18,7 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                         <li><span class='one'>projects -</span> <span class='two'>show my projects</span></li>
                         <li><span class='one'>GUI -</span> <span class='two'>switch to GUI mode</span></li>
                         <li><span class='one'>contact -</span> <span class='two'>show my contact information</span></li>
+                        <li><span class='one'>bore -</span> <span class='two'>play a snake game</span></li>
                     </ul>
                 `;
                 break;
@@ -36,9 +37,9 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Education:</span></p>
                     <ul>
-                        <li><span class="three">2023-Present: B.Tech in CSE, Lovely Professional University, Phagwara, Punjab</span></li>
-                        <li><span class="three">2019-2021: Senior Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
-                        <li><span class="three">2017-2019: Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
+                        <li><span class="three">>2023-Present: B.Tech in CSE, Lovely Professional University, Phagwara, Punjab</span></li>
+                        <li><span class="three">>2019-2021: Senior Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
+                        <li><span class="three">>2017-2019: Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
                     </ul>
                 `;
                 break;
@@ -92,6 +93,10 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                     </ul>
                 `;
                 break;
+            case 'bore':
+                commandOutput = '<p class="command-output">Starting Snake Game...</p>';
+                showSnakeGame();
+                break;
             default:
                 commandOutput = `<p class="command-output">>command not found: ${input}</p>`;
         }
@@ -117,3 +122,100 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
         event.target.parentElement.remove();
     }
 });
+
+function showSnakeGame() {
+    const gameOverlay = document.createElement('div');
+    gameOverlay.classList.add('game-overlay');
+
+    gameOverlay.innerHTML = `
+        <div class="game-header">
+            <span>Snake Game</span>
+            <button class="close-button">&times;</button>
+        </div>
+        <canvas id="gameCanvas" width="200" height="200"></canvas>
+    `;
+
+    document.body.appendChild(gameOverlay);
+
+    document.querySelector('.close-button').addEventListener('click', function() {
+        document.body.removeChild(gameOverlay);
+    });
+
+    startSnakeGame();
+}
+
+function startSnakeGame() {
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const box = 20;
+    let snake = [];
+    snake[0] = { x: 10 * box, y: 10 * box };
+
+    let food = {
+        x: Math.floor(Math.random() * 19 + 1) * box,
+        y: Math.floor(Math.random() * 19 + 1) * box
+    };
+
+    let d;
+    document.addEventListener('keydown', direction);
+
+    function direction(event) {
+        if (event.keyCode === 37 && d !== 'RIGHT') d = 'LEFT';
+        else if (event.keyCode === 38 && d !== 'DOWN') d = 'UP';
+        else if (event.keyCode === 39 && d !== 'LEFT') d = 'RIGHT';
+        else if (event.keyCode === 40 && d !== 'UP') d = 'DOWN';
+    }
+
+    function collision(newHead, snake) {
+        for (let i = 0; i < snake.length; i++) {
+            if (newHead.x === snake[i].x && newHead.y === snake[i].y) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < snake.length; i++) {
+            ctx.fillStyle = (i === 0) ? 'green' : 'white';
+            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+
+            ctx.strokeStyle = 'red';
+            ctx.strokeRect(snake[i].x, snake[i].y, box, box);
+        }
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(food.x, food.y, box, box);
+
+        let snakeX = snake[0].x;
+        let snakeY = snake[0].y;
+
+        if (d === 'LEFT') snakeX -= box;
+        if (d === 'UP') snakeY -= box;
+        if (d === 'RIGHT') snakeX += box;
+        if (d === 'DOWN') snakeY += box;
+
+        if (snakeX === food.x && snakeY === food.y) {
+            food = {
+                x: Math.floor(Math.random() * 19 + 1) * box,
+                y: Math.floor(Math.random() * 19 + 1) * box
+            };
+        } else {
+            snake.pop();
+        }
+
+        let newHead = { x: snakeX, y: snakeY };
+
+        if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake)) {
+            clearInterval(game);
+            alert('Game Over');
+        }
+
+        snake.unshift(newHead);
+    }
+
+    let game = setInterval(draw, 100);
+}
