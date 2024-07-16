@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    color: #3B7DC4; /* Blue for text */
+    color: #39FF14; /* Neon green for text */
     font-size: 1.3em; /* Increase font size */
     margin: 0;
     display: flex;
@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    border: 2px solid #3B7DC4; /* Blue border */
+    border: 2px solid #FF073A; /* Neon red border */
     padding: 20px;
     text-align: left; /* Align contents to the left */
     margin-top: 20px;
@@ -31,33 +31,33 @@ body {
 }
 
 .prompt {
-    color: #3DBD94; /* Turquoise for prompt */
+    color: #00FFFF; /* Neon cyan for prompt */
     font-size: 1.1em; /* Increase prompt font size */
 }
 
 .command-output {
-    color: #8CC63F; /* Green for command output */
+    color: #ADFF2F; /* Neon green-yellow for command output */
     font-size: 1.1em; /* Increase command output font size */
 }
 
 .wec {
-    color: #EC008C; /* Yellow for ASCII art */
+    color: #FFD700; /* Neon yellow for ASCII art */
 }
 
 .but {
-    color: #FBCB09; /* Yellow for ASCII art */
+    color: #FF00FF; /* Neon magenta for ASCII art */
 }
 
 .help-menu {
-    color: #F7941D; /* Orange for help menu */
+    color: #FF1493; /* Neon pink for help menu */
 }
 
 a {
-    color: #8CC63F; /* Pink for links */
+    color: #00FF00; /* Neon green for links */
 }
 
 a:hover {
-    color: #92278F; /* Purple for hovered links */
+    color: #FF4500; /* Neon orange for hovered links */
 }
 
 ul {
@@ -66,25 +66,25 @@ ul {
 }
 
 li .one {
-    color: #F7941D; /* Orange for list items */
+    color: #FF1493; /* Neon pink for list items */
     margin-left: 35px;
     padding: 5px;
 }
 
 li .two {
-    color: #cacaca; /* Orange for list items */
+    color: #F5F5F5; /* Light gray for list item descriptions */
     padding: 5px;
 }
 
 li .three {
-    color: #cacaca;
+    color: #F5F5F5;
     padding-left: 35px;
 }
 
 input {
     background: none;
     border: none;
-    color: #3DBD94; /* Turquoise for input */
+    color: #00FFFF; /* Neon cyan for input */
     outline: none;
     font-family: monospace;
     font-size: 1.1em;
