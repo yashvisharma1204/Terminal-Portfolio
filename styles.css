@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    color: #39FF14; /* Neon green for text */
+    color: #3B7DC4; /* Blue for text */
     font-size: 1.3em; /* Increase font size */
     margin: 0;
     display: flex;
@@ -8,68 +8,54 @@ body {
     align-items: center; /* Center vertically */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: monospace;
-    overflow-y: scroll;
+    overflow-y:scroll;
 }
 
 .container {
-    border: 2px solid #FF073A; /* Neon red border */
+    border: 2px solid #3B7DC4; /* Blue border */
     padding: 20px;
     text-align: left; /* Align contents to the left */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 95%;
-    box-sizing: border-box;
 }
 
 .terminal {
     margin: 0 auto; /* Center the terminal box horizontally */
-    width: 100%; /* Full width */
     max-width: 800px; /* Adjust maximum width as needed */
-    box-sizing: border-box;
 }
 
 .ascii-art {
     font-family: monospace;
     font-size: 1.2em; /* Increase ASCII art font size */
     margin-bottom: 20px;
-    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 15px #39FF14;
 }
 
 .prompt {
-    color: #00FFFF; /* Neon cyan for prompt */
+    color: #3DBD94; /* Turquoise for prompt */
     font-size: 1.1em; /* Increase prompt font size */
-    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
 }
 
 .command-output {
-    color: #ADFF2F; /* Neon green-yellow for command output */
+    color: #8CC63F; /* Green for command output */
     font-size: 1.1em; /* Increase command output font size */
-    text-shadow: 0 0 5px #ADFF2F, 0 0 10px #ADFF2F, 0 0 15px #ADFF2F;
 }
 
 .wec {
-    color: #FFD700; /* Neon yellow for ASCII art */
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+    color: #EC008C; /* Yellow for ASCII art */
 }
 
 .but {
-    color: #FF00FF; /* Neon magenta for ASCII art */
-    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF;
+    color: #FBCB09; /* Yellow for ASCII art */
 }
 
 .help-menu {
-    color: #FF1493; /* Neon pink for help menu */
-    text-shadow: 0 0 5px #FF1493, 0 0 10px #FF1493, 0 0 15px #FF1493;
+    color: #F7941D; /* Orange for help menu */
 }
 
 a {
-    color: #00FF00; /* Neon green for links */
-    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
+    color: #8CC63F; /* Pink for links */
 }
 
 a:hover {
-    color: #FF4500; /* Neon orange for hovered links */
-    text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 15px #FF4500;
+    color: #92278F; /* Purple for hovered links */
 }
 
 ul {
@@ -78,80 +64,73 @@ ul {
 }
 
 li .one {
-    color: #FF1493; /* Neon pink for list items */
+    color: #F7941D; /* Orange for list items */
     margin-left: 35px;
     padding: 5px;
-    text-shadow: 0 0 5px #FF1493, 0 0 10px #FF1493, 0 0 15px #FF1493;
 }
 
 li .two {
-    color: #F5F5F5; /* Light gray for list item descriptions */
+    color: #cacaca; /* Orange for list items */
     padding: 5px;
-    text-shadow: 0 0 5px #F5F5F5, 0 0 10px #F5F5F5, 0 0 15px #F5F5F5;
+}
+li .three{
+    color: #cacaca;
+    padding-left: 35px ;
 }
 
-li .three {
-    color: #F5F5F5;
-    padding-left: 35px;
-    text-shadow: 0 0 5px #F5F5F5, 0 0 10px #F5F5F5, 0 0 15px #F5F5F5;
+@media (max-width: 500px) {
+    .terminal {
+        max-width: 95%; /* Adjust terminal width for smaller screens */
+    }
+
+    .ascii-art {
+        font-size: 1.3em; /* Decrease ASCII art size for smaller screens */
+    }
+
+    .output {
+        max-height: 150px; /* Reduce max-height for output */
+    }
 }
 
 input {
     background: none;
     border: none;
-    color: #00FFFF; /* Neon cyan for input */
+    color: #3DBD94; /* Turquoise for input */
     outline: none;
     font-family: monospace;
     font-size: 1.1em;
-    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
-    width: 100%; /* Full width */
-    box-sizing: border-box;
 }
 
 p {
     margin-left: 20px;
     font-size: 18px;
-    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 15px #39FF14;
+}
+/* Game Overlay */
+.game-overlay {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 220px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00FF00;
+    padding: 10px;
+    box-shadow: 0 0 0px #00FF00;
+    z-index: 1000;
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 500px) {
-    body {
-        font-size: 1em; /* Adjust font size */
-    }
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #00FF00;
+    font-family: monospace;
+    margin-bottom: 10px;
+}
 
-    .container {
-        padding: 10px; /* Reduce padding */
-        border-width: 1px; /* Adjust border width */
-    }
-
-    .terminal {
-        max-width: 95%; /* Adjust terminal width for smaller screens */
-        margin: 10px auto; /* Add margin for spacing */
-    }
-
-    .ascii-art {
-        font-size: 1em; /* Decrease ASCII art size for smaller screens */
-    }
-
-    .prompt,
-    .command-output {
-        font-size: 1em; /* Adjust font size for prompt and output */
-    }
-
-    li .one,
-    li .two,
-    li .three {
-        margin-left: 20px; /* Adjust margin for list items */
-        padding: 3px; /* Adjust padding for list items */
-    }
-
-    input {
-        font-size: 1em; /* Adjust input font size */
-    }
-
-    p {
-        margin-left: 10px; /* Adjust paragraph margin */
-        font-size: 16px; /* Adjust paragraph font size */
-    }
+.close-button {
+    background: none;
+    border: none;
+    color: #00FF00;
+    font-size: 1.2em;
+    cursor: pointer;
 }
