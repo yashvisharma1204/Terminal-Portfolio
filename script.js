@@ -37,9 +37,9 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 commandOutput = `
                     <p><span class="command-output">Education:</span></p>
                     <ul>
-                        <li><span class="three">>2023-Present: B.Tech in CSE, Lovely Professional University, Phagwara, Punjab</span></li>
-                        <li><span class="three">>2019-2021: Senior Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
-                        <li><span class="three">>2017-2019: Secondary Certificate, Delhi International School, Dwarka, Delhi</span></li>
+                        <li><span class="three">> 2023-Present: B.Tech in CSE, Lovely Professional University, Phagwara, Punjab</span></li>
+                        <li><span class="three">> 2019-2021: Senior Secondary Certificate, Delhi International School, Delhi</span></li>
+                        <li><span class="three">> 2017-2019: Secondary Certificate, Delhi International School, Delhi</span></li>
                     </ul>
                 `;
                 break;
@@ -94,7 +94,7 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 `;
                 break;
             case 'bore':
-                commandOutput = '<p class="command-output">Starting Snake Game...</p>';
+                commandOutput = '<p class="command-output">Starting Snake Game...<br>> Press "X" to close the game <br>> Write "bore" again to restart the game after closing</p>';
                 showSnakeGame();
                 break;
             default:
@@ -148,9 +148,9 @@ function startSnakeGame() {
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
 
-    const box = 20;
+    const box = 10;
     let snake = [];
-    snake[0] = { x: 10 * box, y: 10 * box };
+    snake[0] = { x: 5 * box, y: 5* box };
 
     let food = {
         x: Math.floor(Math.random() * 19 + 1) * box,
@@ -180,10 +180,10 @@ function startSnakeGame() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         for (let i = 0; i < snake.length; i++) {
-            ctx.fillStyle = (i === 0) ? 'green' : 'white';
+            ctx.fillStyle = (i === 0) ? 'green' : 'green';
             ctx.fillRect(snake[i].x, snake[i].y, box, box);
 
-            ctx.strokeStyle = 'red';
+            ctx.strokeStyle = 'black';
             ctx.strokeRect(snake[i].x, snake[i].y, box, box);
         }
 
