@@ -1,61 +1,121 @@
 body {
-    background-color: black;
-    color: #3B7DC4; /* Blue for text */
-    font-size: 1.3em; /* Increase font size */
+    background-color: rgb(36, 77, 139);
+    color: #3B7DC4;
+    font-size: 1.3em;
     margin: 0;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
     font-family: monospace;
-    overflow-y:scroll;
 }
 
 .container {
-    border: 2px solid #3B7DC4; /* Blue border */
-    padding: 20px;
-    text-align: left; /* Align contents to the left */
+    background-color: #000;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    position: relative;
+    left:230px;
+    top: 90px;
+}
+
+.header {
+    background-color: #101010;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 601px;
+}
+
+.header button:nth-child(1) {
+    background-color: rgb(125, 0, 0);
+    border-radius: 20px;
+    height: 25px;
+    width: 25px;
+    border:none;
+}
+.header button:nth-child(2) {
+    background-color: rgb(189, 145, 0);
+    border-radius: 20px;
+    height: 25px;
+    width: 25px;
+    border:none;
+}
+.header button:nth-child(3) {
+    background-color: rgb(0, 124, 35);
+    border-radius: 20px;
+    height: 25px;
+    width: 25px;
+    border:none;
 }
 
 .terminal {
-    margin: 0 auto; /* Center the terminal box horizontally */
-    max-width: 800px; /* Adjust maximum width as needed */
+    margin: 40px auto 0;
+    max-width: 600px;
+    max-height: 400px;
+    background-color: #173e33c0;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: auto;
 }
+
+/* Style the scrollbar for .terminal */
+.terminal::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+    background-color: transparent; /* Background color of the scrollbar */
+}
+
+.terminal::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+}
+
 
 .ascii-art {
     font-family: monospace;
-    font-size: 1.2em; /* Increase ASCII art font size */
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
 .prompt {
-    color: #3DBD94; /* Turquoise for prompt */
-    font-size: 1.1em; /* Increase prompt font size */
+    color: #3DBD94;
+    font-size: 1.1em;
 }
 
 .command-output {
-    color: #8CC63F; /* Green for command output */
-    font-size: 1.1em; /* Increase command output font size */
+    color: #8CC63F;
+    font-size: 1.1em;
 }
 
 .wec {
-    color: #EC008C; /* Yellow for ASCII art */
+    color: #EC008C;
 }
 
 .but {
-    color: #FBCB09; /* Yellow for ASCII art */
+    color: #FBCB09;
 }
 
 .help-menu {
-    color: #F7941D; /* Orange for help menu */
+    color: #F7941D;
 }
 
 a {
-    color: #8CC63F; /* Pink for links */
+    color: #8CC63F;
 }
 
 a:hover {
-    color: #92278F; /* Purple for hovered links */
+    color: #92278F;
 }
 
 ul {
@@ -64,38 +124,40 @@ ul {
 }
 
 li .one {
-    color: #F7941D; /* Orange for list items */
+    color: #F7941D;
     margin-left: 35px;
     padding: 5px;
 }
-
-li .two {
-    color: #cacaca; /* Orange for list items */
-    padding: 5px;
+li span:first-of-type{
+    color: rgb(202, 202, 202);
 }
-li .three{
-    color: #cacaca;
-    padding-left: 35px ;
+li span:nth-of-type(2){
+    margin-left: 20px;
+    font-style: italic;
 }
-
+li span:nth-of-type(3){
+    margin-left: 20px;
+    font-weight: bolder;
+    color:#F7941D;
+}
 @media (max-width: 500px) {
     .terminal {
-        max-width: 95%; /* Adjust terminal width for smaller screens */
+        max-width: 95%;
     }
 
     .ascii-art {
-        font-size: 1.3em; /* Decrease ASCII art size for smaller screens */
+        font-size: 1.3em;
     }
 
     .output {
-        max-height: 150px; /* Reduce max-height for output */
+        max-height: 150px;
     }
 }
 
 input {
     background: none;
     border: none;
-    color: #3DBD94; /* Turquoise for input */
+    color: #3DBD94;
     outline: none;
     font-family: monospace;
     font-size: 1.1em;
@@ -105,16 +167,17 @@ p {
     margin-left: 20px;
     font-size: 18px;
 }
-/* Game Overlay */
+
+/* Game Overlay styles remain unchanged */
 .game-overlay {
     position: fixed;
     right: 20px;
     bottom: 20px;
     width: 220px;
     background-color: rgba(0, 0, 0, 0.9);
-    border: 2px solid #00FF00;
     padding: 10px;
-    box-shadow: 0 0 0px #00FF00;
+    box-shadow: 2px 2px 5px #000000;
+    border-radius: 10px;
     z-index: 1000;
 }
 
@@ -122,15 +185,116 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #00FF00;
+    color: #268426;
     font-family: monospace;
     margin-bottom: 10px;
+    padding: 0;
+    font-weight: bolder;
 }
 
 .close-button {
-    background: none;
+    background: red;
     border: none;
-    color: #00FF00;
-    font-size: 1.2em;
+    cursor: pointer;
+    width:25px;
+    height: 25px;
+    font-weight: bolder;
+    border-radius: 15px;
+}
+
+@media (min-width:200px) and (max-width:600px){
+    .ascii-art{
+        font-size: 70%;
+    }
+    .container{
+        margin: 0;
+        left:0;
+    }
+    .terminal{
+        width:45vh;
+        height: 55vh;
+    }
+    .header{
+        width:45.5vh;
+    }
+}
+
+.phone {
+    position: fixed; /* Fixed positioning to stay in place relative to the viewport */
+    left: 300px; /* Align to the left edge of the viewport */
+    top: 50px; /* Adjust top position as needed */
+    width: 300px;
+    height: 550px;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 40px;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.phonescreen {
+    position: absolute;
+    background-color: rgb(199, 236, 255);
+    left: 15px; /* Adjust left position as needed */
+    top: 15px; /* Adjust top position as needed */
+    width: 290px;
+    height: 540px;
+    border-radius: 20px;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Ensure items stack vertically */
+    align-items: center; /* Center items horizontally *//* Center items vertically */
+    overflow-y: scroll;
+}
+.phonescreen::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+    background-color: transparent; /* Background color of the scrollbar */
+}
+
+.phonescreen::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+}
+
+.phonescreen h1 {
+    padding: 20px;
+}
+.line{
+    background-color: black;
+    height: 5px;
+    width:100px;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+.circle{
+    position: fixed;
+    top:55px;
+    background-color: black;
+    height: 20px;
+    width:100px;
+    border-radius: 5px;
+}
+.phonescreen span {
+    font-size: 60px;
+    color: #92278F;
+}
+
+.phonescreen h1 img {
+    width: 60px;
+}
+
+.phonescreen img {
+    width: 200px; /* Ensure image fills its container */
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 0px; /* Add margin for spacing */
+}
+.phonescreen button{
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    margin-top: 10px;
+    border: none;
+    background-color: #F7941D;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 15px;
+    box-shadow: 1px 1px 10px #717171;
     cursor: pointer;
 }
