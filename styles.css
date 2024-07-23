@@ -20,7 +20,7 @@ body {
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     position: relative;
-    left:230px;
+    left:180px;
     top: 90px;
 }
 
@@ -192,7 +192,7 @@ p {
     font-weight: bolder;
 }
 
-.close-button {
+.close-button-one {
     background: red;
     border: none;
     cursor: pointer;
@@ -201,8 +201,15 @@ p {
     font-weight: bolder;
     border-radius: 15px;
 }
-
-@media (min-width:200px) and (max-width:600px){
+.corner{
+    position: relative;
+    width: 0vh;
+}
+.click-me{
+    position: hidden;
+    width: 0vh;
+}
+@media (max-width:600px){
     .ascii-art{
         font-size: 70%;
     }
@@ -210,6 +217,15 @@ p {
         margin: 0;
         left:0;
     }
+    
+        .corner {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 10px; /* Adjust right position as needed */
+            width: 80px; /* Adjust width of the image */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 10; /* Ensure it appears above other content */
+        }
     .terminal{
         width:45vh;
         height: 55vh;
@@ -217,11 +233,93 @@ p {
     .header{
         width:45.5vh;
     }
+    .phone {
+        display: none; /* Hide the phone container */
+    }
+
+    .phonescreen {
+        display: none; /* Hide the phonescreen */
+    }
+    .corner {
+        position: absolute;
+        top: 10vh; /* Adjust top position as needed */
+        right: 2vh; /* Adjust right position as needed */
+        width: 10vh; /* Adjust width of the image */
+        z-index: 10;
+        border-radius: 100%; /* Ensure it appears above other content */
+        
+        /* Animation properties */
+        animation-name: floatAnimation;
+        animation-duration: 3s; /* Duration of one complete animation cycle */
+        animation-timing-function: ease-in-out; /* Smooth animation curve */
+        animation-iteration-count: infinite; /* Infinite animation loop */
+    }
+    
+    /* Keyframes for floating animation */
+    @keyframes floatAnimation {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px); /* Adjust distance of float */
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    .click-me{
+        position: absolute;
+        top: 14.5vh; /* Adjust top position as needed */
+        right: 13vh; /* Adjust right position as needed */
+        width: 20vh;
+        height: 2em; /* Adjust width of the image */
+        z-index: 10;
+        color: rgb(166, 166, 166);
+        background-color: none;
+        text-align: center;
+    }
+    
+    
 }
+.box-appear {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Adjust width as needed */
+    max-height: 200px; /* Adjust max-height as needed */
+    background-color: #358770; /* Match terminal background */
+    color: #FFFFFF; /* Text color */
+    border-radius: 10px; /* Match terminal border-radius */
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); /* Match terminal box-shadow */
+    overflow-y: auto; /* Enable scrolling if content exceeds box height */
+    padding: 20px;
+    font-family: monospace;
+    font-size: 1.1em;
+    display: none; /* Initially hide the box */
+    z-index: 1001; /* Ensure it appears above other content */
+}
+
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.close-button {
+    background: rgb(105, 2, 2);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
 
 .phone {
     position: fixed; /* Fixed positioning to stay in place relative to the viewport */
-    left: 300px; /* Align to the left edge of the viewport */
+    left: 250px; /* Align to the left edge of the viewport */
     top: 50px; /* Adjust top position as needed */
     width: 300px;
     height: 550px;
@@ -296,5 +394,64 @@ p {
     font-weight: 900;
     font-size: 15px;
     box-shadow: 1px 1px 10px #717171;
+    cursor: pointer;
+}
+.form-container {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    z-index: 10;
+    font-family: monospace;
+    color:#00194f;
+    font-weight: bold;
+}
+.form-container input{
+    background-color: #c2ded6;
+    border-radius: 20px;
+}
+.form-container textarea{
+    background-color: #c6c2de;
+    border: none;
+}
+button[type='Submit']{
+    background-color: rgb(223, 197, 78);
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 60px;
+    box-shadow: 1px 1px 2px black;
+}
+.form-container form {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.close-form {
+    background-color: rgb(105, 2, 2);
+    position: absolute;
+    top: 20px;
+    height: 40px;
+    width: 40px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
     cursor: pointer;
 }
