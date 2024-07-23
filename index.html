@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminal Style Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -37,16 +37,49 @@
             </div>
         </div>
     </div>
+    <img src="image.jpg" class="corner" id="clickable-image">
+    <div class="click-me">Click Here -></div>
     <div class="phone">
         <div class="phonescreen">
             <div class="circle"></div>
             <h1><span>Hello</span><img src="waving-hand.png" alt="Waving Hand"><br> I am Yashvi Sharma</h1>
             <img src="image.jpg">
-            <button>Contact me</button>
+            <button class="contact-button">Contact me</button>
             <div class="line"></div>
         </div>
+        <div class="form-container" style="display: none;">
+            <div class="circle"></div>
+            <button class="close-form">&times;</button>
+            <form id="contact-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwfWWjBg1cjWJUaRy8nyK--slRFGhY5zMm7BMtH10iUa-DO9uLEv2Xa8qZBxVN4vXlQ/exec'
+        const form = document.forms['form-container']
+        const msg= document.getElementById("msg");
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = 'Message sent successfully!'
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
     <!-- Rest of your HTML -->
 </body>
 <script src="script.js"></script>
+
 </html>
