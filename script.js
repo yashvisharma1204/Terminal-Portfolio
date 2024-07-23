@@ -16,8 +16,6 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                         <li><span class='one'>experience -</span> <span class='two'>show my work experience</span></li>
                         <li><span class='one'>skills -</span> <span class='two'>list my skills</span></li>
                         <li><span class='one'>projects -</span> <span class='two'>show my projects</span></li>
-                        <li><span class='one'>GUI -</span> <span class='two'>switch to GUI mode</span></li>
-                        <li><span class='one'>contact -</span> <span class='two'>show my contact information</span></li>
                         <li><span class='one'>bore -</span> <span class='two'>play a snake game</span></li>
                     </ul>
                 `;
@@ -83,21 +81,6 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                     <p>For more projects, check my GitHub: <a href="https://github.com/yashvisharma1204" target="_blank">https://github.com/yashvisharma1204</a></p>
                 `;
                 break;
-            case 'GUI':
-                commandOutput = '<p class="command-output">Redirecting to GUI Website...</p>';
-                setTimeout(() => {
-                    window.location.href = 'https://yashvisharma1204.github.io/Portfolio/'; // Replace with your actual GUI website URL
-                }, 2000); // 2 seconds delay before redirecting
-                break;
-            case 'contact':
-                commandOutput = `
-                    <p><span class="command-output">Contact Information:</span></p>
-                    <ul>
-                        <li><span class="three">Email: yashvisharma503@gmail.com</span></li>
-                        <li><span class="three">LinkedIn: <a href="https://www.linkedin.com/in/yashvi-sharma-150863220/" target="_blank">https://www.linkedin.com/in/yashvi-sharma-150863220/</a></span></li>
-                    </ul>
-                `;
-                break;
             case 'bore':
                 commandOutput = '<p class="command-output">Starting Snake Game...<br>> Press "X" to close the game <br>> Write "bore" again to restart the game after closing</p>';
                 showSnakeGame();
@@ -135,14 +118,14 @@ function showSnakeGame() {
     gameOverlay.innerHTML = `
         <div class="game-header">
             <span>Snake Game</span>
-            <button class="close-button">&times;</button>
+            <button class="close-button-one">&times;</button>
         </div>
         <canvas id="gameCanvas" width="200" height="200"></canvas>
     `;
 
     document.body.appendChild(gameOverlay);
 
-    document.querySelector('.close-button').addEventListener('click', function() {
+    document.querySelector('.close-button-one').addEventListener('click', function() {
         document.body.removeChild(gameOverlay);
     });
 
@@ -224,3 +207,74 @@ function startSnakeGame() {
 
     let game = setInterval(draw, 100);
 }
+document.getElementById('clickable-image').addEventListener('click', function() {
+    const box = document.createElement('div');
+    box.classList.add('box-appear');
+    box.innerHTML = `
+        <div class="box-header">
+            <span><b>Message</b></span>
+            <button class="close-button">&times;</button>
+        </div>
+        <p>This is my personal website. <i>To experience it better, use <b>LAPTOPS or PCs</b></i><p>
+        Another <a href= "https://yashvisharma1204.github.io/Portfolio/">portfolio</a> you can explore!
+    `;
+
+    // Close button functionality
+    const closeButton = box.querySelector('.close-button');
+    closeButton.addEventListener('click', function() {
+        box.remove();
+    });
+
+    document.body.appendChild(box);
+
+    // Add event listener to remove the box on click outside of it
+    document.addEventListener('click', function(event) {
+        if (!box.contains(event.target) && event.target !== document.getElementById('clickable-image')) {
+            box.remove();
+        }
+    });
+
+    // Toggle box visibility (optional)
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const contactButton = document.querySelector('.contact-button');
+    const formContainer = document.querySelector('.form-container');
+    const closeButton = document.querySelector('.close-form');
+    const phonescreen = document.querySelector('.phonescreen');
+
+    // Show the form when "Contact me" button is clicked
+    contactButton.addEventListener('click', function () {
+        phonescreen.innerHTML = ''; // Clear phonescreen content
+        formContainer.style.display = 'flex'; // Show the contact form
+    });
+
+    // Close the form when close button is clicked
+    closeButton.addEventListener('click', function () {
+        formContainer.style.display = 'none'; // Hide the contact form
+        phonescreen.innerHTML = `
+            <div class="circle"></div>
+            <h1><span>Hello</span><img src="waving-hand.png" alt="Waving Hand"><br> I am Yashvi Sharma</h1>
+            <img src="image.jpg">
+            <button class="contact-button">Contact me</button>
+            <div class="line"></div>
+        `; // Restore phonescreen content
+    });
+
+    // Handle form submission (you can customize this part)
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Here you can add your logic to handle form submission (e.g., send data via AJAX)
+        alert('Form submitted!'); // Example alert, replace with your logic
+        // Optionally, hide the form after submission
+        formContainer.style.display = 'none';
+        phonescreen.innerHTML = `
+            <div class="circle"></div>
+            <h1><span>Hello</span><img src="waving-hand.png" alt="Waving Hand"><br> I am Yashvi Sharma</h1>
+            <img src="image.jpg">
+            <button class="contact-button">Contact me</button>
+            <div class="line"></div>
+        `; // Restore phonescreen content
+    });
+});
