@@ -24,25 +24,30 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 break;
             case 'whoami':
                 commandOutput = `
-                    <p><span style='color:#8CC63F'>Hello, I'm Yashvi Sharma!</p>
+                    <p><span style='color:#8CC63F'>Hello, I'm Yashvi Sharma!</span></p>
                     <ul>
-                        <li><span class='three'>> Second-year Computer Science and Engineering student</span> </li>
-                        <li><span class='three'>> Specializing in AI and Data Engineering</span> </li>
-                        <li><span class='three'>> Studying at Lovely Professional University</span> </li>
-                        <li><span class='three'>> Excited about the intersection of technology and innovation</span> </li>
+                        <li><span class='three'>&gt; Second-year Computer Science and Engineering student at Lovely Professional University</span></li>
+                        <li><span class='three'>&gt; Specializing in Artificial Intelligence and Data Engineering</span></li>
+                        <li><span class='three'>&gt; Currently exploring advanced AI algorithms and machine learning models</span></li>
+                        <li><span class='three'>&gt; Excited about leveraging technology for innovative solutions</span></li>
                     </ul>
                 `;
                 break;
-            case 'education':
-                commandOutput = `
-                    <p><span class="command-output">Education:</span></p>
-                    <ul>
-                        <li><span class="three">> 2023-Present: B.Tech in CSE, Lovely Professional University, Phagwara, Punjab</span></li>
-                        <li><span class="three">> 2019-2021: Senior Secondary Certificate, Delhi International School, Delhi</span></li>
-                        <li><span class="three">> 2017-2019: Secondary Certificate, Delhi International School, Delhi</span></li>
-                    </ul>
-                `;
-                break;
+                case 'education':
+                    commandOutput = `
+                        <p><span class="command-output">Education:</span></p>
+                        <ul>
+                            <li><span class="three">> 2023-Present: B.Tech in Computer Science and Engineering</span><br>
+                                <span class="three">   Institution: Lovely Professional University</span><br>
+                                <span class="three">   CGPA: 8.7</span>
+                            </li>
+                            <li><span class="three">> 2019-2021: Senior Secondary Certificate (Class 12)</span><br>
+                                <span class="three">   Institution: Delhi International School, Delhi</span><br>
+                            </li>
+                        </ul>
+                    `;
+                    break;
+                
             case 'experience':
                 commandOutput = `
                     <p><span class="command-output">Experience:</span></p>
@@ -98,7 +103,7 @@ document.getElementById('command-input').addEventListener('keydown', function(ev
                 showSnakeGame();
                 break;
             default:
-                commandOutput = `<p class="command-output">>command not found: ${input}</p>`;
+                commandOutput = `<p class="command-output">> command not found: ${input}</p>`;
         }
 
         // Append the command and its output to the output div
